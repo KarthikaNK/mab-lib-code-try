@@ -1,1 +1,54 @@
-...
+orig_l1='He was going to market with his friends.'
+orig_l2='They were playing with their dog in the park'
+orig_l3='Football is my favourite sport'
+orig_l4='They were swimming in the pool' 
+ls=['He','biscuits','chocolates','friends','playing','eating','dancing','jumping','snoring','Football','fishing','sleeping','swimming','reading','mud' ,'pool','juice']
+dup_l1='blank was going to market with his blank.'
+dup_l2='They were blank with their dog in the park'
+dup_l3='blank is my favourite sport'
+dup_l4='They were blank in the blank'
+chance=5
+while chance>0: 
+  print('--'*20)
+  n1,n2,n3,n4,n5,n6=map(int,(input('Enter 6 numbers between 0 and 16(including 0 and 16 ).')).split())
+  score=0
+  new=dup_l1.replace('blank',ls[n1])
+  new_l1=new.replace('blank',ls[n2])
+  new_l2=dup_l2.replace('blank',ls[n3])
+  new_l3=dup_l3.replace('blank',ls[n4])
+  new_x=dup_l4.replace('blank',ls[n5])
+  new_l4=new_x.replace('blank',ls[n6])
+  if new_l1==orig_l1:
+    print("Wow ,you guessed the first line crctly!")
+    print(orig_l1)
+    score+=1
+  else:
+    print("Bad guess on line 1!")
+    print(new_l1)
+  if new_l2==orig_l2:
+    print("Wow ,you guessed line 2 crctly!")
+    print(orig_l2)
+    score+=1
+  else:
+    print("Bad guess on line 2!")
+    print(new_l2)
+  if new_l3==orig_l3:
+    print("Wow ,you guessed line 3 crctly!")
+    print(orig_l3)
+    score+=1
+  else:
+    print("Bad guess on line 3!")
+    print(new_l3)
+  if new_l4==orig_l4:
+    print("Wow ,you guessed line 4 crctly!")
+    print(orig_l4)
+    score+=1
+  else:
+    print("Bad guess on line 4!")
+    print(new_l4)
+  print("Your score is ",score)
+  chance-=1
+  print('You have',chance,'chances left!')
+  print('--'*20)
+
+
